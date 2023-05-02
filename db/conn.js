@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
+require('dotenv').config({ path: './config.env' });
 
-const DB = "mongodb+srv://mangesh:QYTLPQdNOFoTwxuz@cluster0.6hhshhc.mongodb.net/curdo?retryWrites=true&w=majority"
+
+
+const DB = process.env.DATABASE;
+
 mongoose.connect(DB).then(()=>{
     console.log("mongo connection successfully !");
 }).catch((e)=>{
